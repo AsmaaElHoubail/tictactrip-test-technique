@@ -23,7 +23,7 @@ import BatButton from "../batButton";
 
 import "./index.css";
 
-const AutoComplete = () => {
+const SearchBar = () => {
 	const [tripType, setTripType] = useState("round-trip");
 	const [fromQuery, setFromQuery] = useState("");
 	const [toQuery, setToQuery] = useState("");
@@ -217,4 +217,4 @@ const AutoComplete = () => {
 	);
 };
 
-export default AutoComplete;
+export default SearchBar;
