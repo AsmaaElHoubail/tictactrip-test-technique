@@ -1,0 +1,92 @@
+.search-container {
+	display: flex;
+	align-items: center;
+	background-color: #f2f2f2;
+	padding: 5px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+	flex: 1;
+	padding: 10px;
+	font-size: 16px;
+	border: none;
+	background-color: transparent;
+}
+
+/* Style the search button */
+.search-button {
+	background-color: #4caf50;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+/* Style the search button on hover */
+.search-button:hover {
+	background-color: #3e8e41;
+}
+.SearchBar {
+	pointer-events: all;
+	background: #fff;
+	box-shadow: 0 4px 8px rgb(19 41 104 / 10%);
+	border-radius: 10px;
+	padding-bottom: 16px;
+	width: 1100px;
+	height: 190px;
+}
+.fromInput {
+	width: 300px;
+	/* margin-top: 40px; */
+	margin-left: 20px;
+}
+.Toinput {
+	width: 300px;
+	/* margin-top: 40px; */
+	/* margin-left: 20px; */
+}
+.SearchButton {
+	width: 170px;
+	height: 54px;
+	/* margin-top: 40px; */
+	/* margin: 0px 20px; */
+	border-radius: 8px;
+	border: 1px solid transparent;
+	background-color: rgb(246, 82, 88);
+	color: white;
+	font-size: medium;
+	cursor: pointer;
+}
+.SearchButton:hover {
+	background-color: rgb(234, 108, 112);
+}
+.SwitchButton {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	margin-left: 25px;
+	color: black;
+}
+.SelectBox {
+	width: fit-content;
+	margin-left: 25px;
+	margin-top: 10px;
+	display: flex;
+}
+.inputs {
+	display: flex;
+	align-items: center;
+	margin: 20px 0px;
+}
+.inputs > * {
+	margin-right: 20px !important;
+}
+.personOption {
+	margin-left: 20px;
+	width: 200px;
+}
