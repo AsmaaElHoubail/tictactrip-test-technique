@@ -17,6 +17,8 @@ import Typography from "@mui/material/Typography";
 
 import { getCitiesAutocomplete, getPopularCities } from "../../API";
 
+import BatButton from "../batButton";
+
 import "./index.css";
 
 const AutoComplete = () => {
@@ -141,6 +143,7 @@ const AutoComplete = () => {
 				<FormGroup>
 					<FormControlLabel control={<Switch defaultChecked />} label="Find my accommodation" />
 				</FormGroup>
+				<BatButton onClick={handleClick} />
 				<Popover
 					id={id}
 					open={open}
