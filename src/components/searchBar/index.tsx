@@ -196,7 +196,7 @@ const SearchBar = () => {
 					// 	horizontal: "center",
 					// }}
 					anchorReference="anchorPosition"
-					anchorPosition={{ top: 430, left: 741 }}>
+					anchorPosition={{ top: 220, left: 741 }}>
 					<Typography sx={{ p: 2 }}>
 						<List>
 							{popularCities.map((city: any) => {
