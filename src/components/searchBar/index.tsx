@@ -14,6 +14,8 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import dayjs, { Dayjs } from "dayjs";
 import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
 
 import { getCitiesAutocomplete, getPopularCities } from "../../API";
 
@@ -31,19 +33,39 @@ const AutoComplete = () => {
 	const [returnDate, setReturnDate] = React.useState<Dayjs | null>();
 
 	const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
+	const [anchorElPassengers, setAnchorElPassengers] = React.useState<HTMLElement | null>(null);
 
 	const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
 		setAnchorEl(event.currentTarget);
+	};
+	const handleClickPassenger = (event: React.MouseEvent<HTMLElement>) => {
+		setAnchorElPassengers(event.currentTarget);
 	};
 
 	const handleClose = () => {
 		setAnchorEl(null);
 	};
+	const handleClosePassengers = () => {
+		setAnchorElPassengers(null);
+	};
 
 	const open = Boolean(anchorEl);
-	const id = open ? "simple-popover" : undefined;
+	const openPassengers = Boolean(anchorElPassengers);
+	// const id = open ? "simple-popover" : undefined;
 
 	const [passangersCount, setPassangersCount] = useState(0);
+
+	//increase counter
+	const increasePassengers = () => {
+		setPassangersCount((count) => count + 1);
+	};
+
+	//decrease counter
+	const decreasePassengers = () => {
+		if (passangersCount > 0) {
+			setPassangersCount((count) => count - 1);
+		}
+	};
 
 	useEffect(() => {
 		getPopularCities().then((data) => {
@@ -80,9 +102,8 @@ const AutoComplete = () => {
 						<option value={"round-trip"}>Round trip</option>
 					</NativeSelect>
 				</FormControl>
-				<FormControl fullWidth>
+				<FormControl fullWidth onClick={handleClickPassenger}>
 					<NativeSelect
-						// onClick={handleClick}
 						className="personOption"
 						defaultValue={1}
 						disabled
@@ -90,10 +111,31 @@ const AutoComplete = () => {
 							name: "Select",
 							id: "uncontrolled-native",
 						}}>
-						{/* <option value={1}>0 adult</option> */}
 						<option value={1}>{passangersCount > 0 ? `${passangersCount} Adults` : `${passangersCount} Adult`}</option>
 					</NativeSelect>
 				</FormControl>
+				<Popover
+					style={{ padding: "10px" }}
+					open={openPassengers}
+					anchorEl={anchorElPassengers}
+					onClose={handleClosePassengers}
+					anchorOrigin={{
+						vertical: "bottom",
+						horizontal: "left",
+					}}
+					transformOrigin={{
+						vertical: "top",
+						horizontal: "left",
+					}}>
+					<div style={{ display: "flex", padding: "10px" }}>
+						<Typography sx={{ p: 1 }}>Adults</Typography>
+						<ButtonGroup size="small" aria-label="small outlined button group">
+							<Button onClick={increasePassengers}>+</Button>
+							{passangersCount > 0 && <Button disabled>{passangersCount}</Button>}
+							{passangersCount > 0 && <Button onClick={decreasePassengers}>-</Button>}
+						</ButtonGroup>
+					</div>
+				</Popover>
 			</div>
 			<div className="inputs">
 				<Autocomplete
@@ -145,15 +187,16 @@ const AutoComplete = () => {
 				</FormGroup>
 				<BatButton onClick={handleClick} />
 				<Popover
-					id={id}
+					// id={id}
 					open={open}
-					anchorEl={anchorEl}
+					// anchorEl={anchorEl}
 					onClose={handleClose}
-					anchorOrigin={{
-						vertical: "bottom",
-						horizontal: "center",
-					}}
-					anchorPosition={{ top: 228, left: 400 }}>
+					// anchorOrigin={{
+					// 	vertical: "bottom",
+					// 	horizontal: "center",
+					// }}
+					anchorReference="anchorPosition"
+					anchorPosition={{ top: 430, left: 741 }}>
 					<Typography sx={{ p: 2 }}>
 						<List>
 							{popularCities.map((city: any) => {
