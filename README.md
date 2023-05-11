@@ -1,46 +1,37 @@
-# Getting Started with Create React App
+# TicTacTrip test technique
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ce projet est une tentative de raliser le test technique fournie par TicTacTrip dans le cadre de ma candidature pour Alternance .
 
-## Available Scripts
+https://tictactrip.notion.site/Front-7511eeb4fd5c4dcdb447ca91f37cd0f4
 
-In the project directory, you can run:
+## FeedBack :
 
-### `npm start`
+### Temps de réalisation :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Le projet du test technique a été réalisé dans un délai de 2 heures.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Choix techniques :
 
-### `npm test`
+Le projet a été réalisé en utilisant ReactJS avec TypeScript.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   la bibliothèque [Material-UI](https://mui.com/material-ui/) qui permet d'accélérer le processus de développement en évitant d'avoir à créer des composants personnalisés à partir de zéro.
+-   Pour communiquer avec les APIs externe, la bibliothèque [Axios](https://axios-http.com/) qui facilite l'intégration des données provenant de l'API externe dans l'application.
 
-### `npm run build`
+### Difficultés :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Étant donné le délai de réalisation de 2 heures, il est important de gérer efficacement son temps et de se concentrer sur les fonctionnalités essentielles.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Design :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Le projet a ete conçu en utilisant les composants fournis par MUI, qui offrent un design moderne et attrayant.
 
-### `npm run eject`
+### Remarques :
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Vu que la realisation de ce test ete limite en terme de temps, vu que c'est la periode des examens. j'ai essaye d'implementer les differents fonctionnalités avec un design je dirai pas basique mais y'a pas mal d'axe d'amelioration notament le cote Responsive qui n'etait pas mise en place aussi que amelioration generale des parties UX/UI.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Mode d'utilisation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   Cloner le repo
+-   Lancer la cmd dans le root du projet : `npm i`
+-   Apres installation , lancer la cmd : `npm start`
+-   Enjoy :)
